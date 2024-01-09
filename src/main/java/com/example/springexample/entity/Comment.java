@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.ManyToAny;
 
 import java.time.LocalDateTime;
 
@@ -20,10 +21,12 @@ public class Comment {
     @Column(name = "text")
     private String text;
 
-    @Column(name = "author")
-    private String author;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
 
     @CreationTimestamp
     @Column(name = "creation_time")
     private LocalDateTime time;
+
 }
