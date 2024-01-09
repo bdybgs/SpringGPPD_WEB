@@ -5,14 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
-public class CommentDto {
-    private Integer id;
-    private String text;
-    private Integer authorId;
+public class MovieDto {
+    private Long id;
+    private String title;
+    private int duration;
 }
-
 
